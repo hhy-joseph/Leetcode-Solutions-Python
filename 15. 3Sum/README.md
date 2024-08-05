@@ -10,30 +10,14 @@ This repository contains two Python solutions to check if a string `s` is a subs
 
 This solution checks if `s` is a subsequence of `t` by iterating through each character in `t` and matching it with the characters in `s` in order.
 
-#### Function Signature
+### Solution 2 (solution2.py)
+This solution checks if s is a subsequence of t by creating a list of characters from t that are in s and then comparing the joined list with s.
 
-```python
-class Solution:
-    def isSubsequence(self, s: str, t: str) -> bool:
-        """
-        This function checks if string s is a subsequence of string t.
-        
-        :param s: String to check as a subsequence.
-        :type s: str
-        :param t: String to check against.
-        :type t: str
-        :return: True if s is a subsequence of t, False otherwise.
-        :rtype: bool
-        """
-        # Initialize a pointer for the string s
-        s_index = 0
-        
-        # Iterate through each character in string t
-        for char in t:
-            # If the character in t matches the character in s at s_index
-            if s_index < len(s) and char == s[s_index]:
-                # Move the pointer to the next character in s
-                s_index += 1
-        
-        # If we have matched all characters in s, return True
-        return s_index == len(s)
+Explanation
+Create an empty list: Initialize an empty list called merged.
+Iterate through each character in t:
+For each character in t, check if it is in s.
+If it is, append it to the merged list.
+Join the list and compare:
+Join the characters in the merged list to form a string.
+Compare the formed string with s. If they are equal, return True; otherwise, return False.
